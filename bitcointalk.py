@@ -146,6 +146,9 @@ def parseProfile(html, todaysDate=datetime.utcnow().date()):
         "Website: ": "website_name",
         "Bitcoin Address: ": "bitcoin_address",
         "Other contact info: ": "other_contact_info"
+        "Activity:": "activity"
+        "Merit:": "merit"
+        "Posts:": "posts"
     }
     for label, key in labelMapping.iteritems():
         data[key] = None
@@ -171,7 +174,7 @@ def parseProfile(html, todaysDate=datetime.utcnow().date()):
                 data['website_link'] = linkNode.attrib['href']
             elif label == "Date Registered: " or label == "Last Active: ":
                 data[labelMapping[label]] = data[labelMapping[label]].replace(
-                    "Today at", todaysDate.strftime("%B %d, %Y,"))
+                    "Today at", todaysDate.strftime("%B %d, %Y,")).replace('Never', 'May 13, 1990, 06:40:39 PM')
                 data[labelMapping[label]] = datetime.strptime(
                     data[labelMapping[label]], "%B %d, %Y, %I:%M:%S %p")
     return data
