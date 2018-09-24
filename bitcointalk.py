@@ -146,8 +146,8 @@ def parseProfile(html, todaysDate=datetime.utcnow().date()):
         "Website: ": "website_name",
         "Bitcoin Address: ": "bitcoin_address",
         "Other contact info: ": "other_contact_info",
-        "Activity: ": "activity",
-        "Merit: ": "merit",
+        "Activity:": "activity",
+        "Merit:": "merit",
         "Posts: ": "posts"
     }
     for label, key in labelMapping.iteritems():
