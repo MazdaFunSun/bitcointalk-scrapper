@@ -83,8 +83,8 @@ def _scrape(entity, entityId):
         _saveToFile(html, entity, entityId)
         datum = entityFunctions[entity]['parser'](html)
         html2 = entityFunctions[entity]['requestorPosts'](entityId)
-		lastDate = entityFunctions[entity]['parserPosts'](html2)
-		datum['last_post_time'] = lastDate
+        lastDate = entityFunctions[entity]['parserPosts'](html2)
+        datum['last_post_time'] = lastDate
         entityFunctions[entity]['inserter'](datum)
         memo[entityPlural].add(entityId)
         return datum

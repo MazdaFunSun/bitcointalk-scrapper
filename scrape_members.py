@@ -22,7 +22,7 @@ for memberId in range(startMemberId, stopMemberId+1):
     logging.info(">Starting scrape of topic ID {0}...".format(memberId))
     try:
         member = memoizer.scrapeMember(memberId)
-		
+
     except Exception as e:
 	exc_type, exc_value, exc_traceback = sys.exc_info()
         print '-'*60
